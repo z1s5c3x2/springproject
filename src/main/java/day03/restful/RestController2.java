@@ -23,6 +23,7 @@ public class RestController2 {
         list1.add("셋");
         return list1;
 
+
     }
     @RequestMapping(value = "/day03/orange",method = RequestMethod.POST)
     @ResponseBody
