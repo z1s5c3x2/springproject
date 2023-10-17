@@ -28,10 +28,10 @@ public class TodoService {
         });
         return res;
     }
+
     @Transactional
     public boolean doPut(TodoDto _dto)
     {
-        System.out.println("_dto = " + _dto);
         Optional<TodoEntity> todoEntity = tr.findById(_dto.getTno());
 
         if(todoEntity.isPresent())

@@ -1,0 +1,79 @@
+###회원가입
+POST http://localhost:80/member/post
+Content-Type: application/json
+
+{
+  "memail" : "qweqwe@qweqwe.com" ,
+  "mphone" : "010-1234-1234",
+  "mname":"asd",
+  "mpassword":"www123"
+}
+
+###조회
+GET http://localhost:80/member/get?mno=1
+Content-Type: application/json
+
+### 정보 수정
+PUT http://localhost:80/member/put
+Content-Type: application/json
+
+{
+  "mno" : 1,
+  "memail" : "test@qweqwe.com" ,
+  "mphone" : "111-1234-1234",
+  "mpassword":"changePwd"
+}
+
+### 아이디 찾기
+
+POST http://localhost:80/member/findId
+Content-Type: application/json
+
+{
+  "mphone" : "111-1234-1234",
+  "mname":"asd"
+}
+
+### 비밀번호 찾기
+
+POST http://localhost:80/member/findPwd
+Content-Type: application/json
+
+{
+  "memail" : "test@qweqwe.com" ,
+  "mphone" : "111-1234-1234"
+}
+
+### 로그인
+
+POST http://localhost:80/member/login
+Content-Type: application/json
+
+{
+  "memail" : "test@qweqwe.com" ,
+  "mpassword":"changePwd"
+}
+
+###
+POST http://localhost:80/member/login
+Content-Type: application/json
+
+{
+"memail" : "test@qweqwe.com" ,
+"mpassword":"changePwd"
+}
+
+### 로그아웃
+
+GET http://localhost:80/member/logout
+Content-Type: application/json
+
+###
+
+GET http://localhost:80/member/logout
+Content-Type: application/json
+
+### 회원 삭제
+
+DELETE http://localhost:80/member/delete?mno=1
+Content-Type: application/json

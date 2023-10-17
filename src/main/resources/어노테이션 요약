@@ -1,0 +1,52 @@
+- 어노테이션
+1. 스프링
+	@SpringBootApplication		스프링부트 실행해주는 어노테이션
+	@ServletComponentScan		서블릿을 찾아서 컨테이너에 빈 등록
+	@Autowired         		    Spring 컨테이너에서 빈 을 찾아 주입하는 역할하는 어노테이션
+
+2. MVC
+    @Controller         	Spring에서 컨트롤러를 지정하기 위한 어노테이션 [ spring 컨테이너에 빈 등록 ]
+    @RestController        	Spring에서 컨트롤러를 지정하기 위한 어노테이션 + @ResponseBody [ spring 컨테이너에 빈 등록 ]
+    @ResponseBody       	서버가 클라이언트로 전송하는 Http 응답의 Body의 내용을 JavaObject를 json 기반의 HTTP Body로 변환시켜주는 어노테이션
+	@RequestMapping         클라이언트가 서버로 전송하는 Http 요청에 맞는 클래스나 메서드를 연결시켜주는 어노테이션
+	@GetMapping			    HTTP 요청 GET 함수 매핑
+	@PostMapping			HTTP 요청 Post 함수 매핑
+	@PutMapping			    HTTP 요청 Put 함수 매핑
+	@DeleteMapping			HTTP 요청 Delete 함수 매핑
+    @Service            	Spring에서 서비스를 지정하기 위한 어노테이션 [ spring 컨테이너에 빈 등록 ]
+	@Component          	Spring 컨테이너에 빈 등록 해주는 어노테이션
+		@RequestParam       클라이언트가 서버로 전송하는 Http 요청의 URL매개변수 의 내용을 JavaObject로 변환시켜주는 어노테이션[ URL?매개변수=값?매개변수=값 ]
+		@RequestBody        클라이언트가 서버로 전송하는 Http 요청의 Body의 내용을 JavaObject로 변환시켜주는 어노테이션
+		- @ModelAttribute     쿼리스트링 형식의 요청 매개변수를 객체로 매핑
+		- @PathVariable       경로상의 매개변수 형식의 요청 매개변수 매핑              URL/값/값
+    @Repository             Spring에서 리포지토리를 지정하기 위한 어노테이션[spring 컨테이너에 빈 등록]
+                            -Entity 조작 시 사용
+3. lombok
+	@NoArgsConstructor		빈생성자 자동 생성
+	@AllArgsConstructor		풀생성자 자동 생성
+	@Getter				    필드의 getter메소드 자동 생성
+	@Setter				    필드의 setter메소드 자동 생성
+	@ToString			    필드의 toString메소드 자동 생성
+	@Builder				필더 패턴 [ 유연하게(생성자 단점 보완 ) 객체 생성 도와주는 함수 제공 ]
+
+4. JPA
+    1.Entity
+        @Entity                     해당 클래스를 db의 테이블과 매핑
+        @Table(name="테이블 이름")       데이터 베이스의 테이블 이름 정의
+        @Id                         해당 필드 pk선언
+         @GeneratedValue(strategy = GenerationType.IDENTITY) : auto_increment
+          @Column()
+            name="필드명" : 생략시 자바 필드명이 테이블 필드명으로 자동 생성
+            length="길이" : 필드 내 데이터 최대길이수 (String 기본값 255)
+            nullable = false = > not null (기본값 true)
+            unique=true : unique  (기본 true)
+
+    2.Repository
+        @Repository
+        @Transactional
+    3.Jpa Auditing
+        @EnableJpaAuditing
+        @EntityListeners(AuditingEntityListener.class)
+        @MappedSuperclass
+        @CreatedDate
+        @LastModifiedDate

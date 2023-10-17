@@ -1,0 +1,21 @@
+
+
+nodejs js자체 컬파일 기능 가진 플랫폼
+
+    react 설치
+           https://nodejs.org/ko/download
+           -react 설치하기 위해nodejs필요[리액트 설치시 npm/npx필요]
+           - npm/npx 자바스크립트 패키지 관리자/매니저 [ 외부라이브러리 설치시 사용되는 환경]
+
+    nodejs 설치 확인
+        cmd node-v npm -v
+    react 설치
+         1 현재 프로잭트내 리액트를 설치할 폴더 생성 [ 실무에서 프로젝트 2개(react,spring)]
+            강의 프로젝트 상태
+                   gradle 프로젝트[spring,react설치]
+
+         2 src->main->폴더생성[react프로젝트명] frontend
+         cdn 설치
+
+         npm 설치
+               npm i create-react-app reactapp(프로젝트명)

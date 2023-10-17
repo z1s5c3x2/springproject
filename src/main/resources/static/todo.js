@@ -3,7 +3,7 @@ function postTest()
 {
 
     $.ajax({
-    url:'http://localhost/todo',
+    url:'../todo',
     method:'post',
     contentType : 'application/json',
     data:JSON.stringify({
