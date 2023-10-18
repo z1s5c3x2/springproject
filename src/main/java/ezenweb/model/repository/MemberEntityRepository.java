@@ -12,4 +12,5 @@ public interface MemberEntityRepository extends JpaRepository<MemberEntity,Integ
     Optional<MemberEntity> findByMnameAndMphone(String mname,String mphone);
     Optional<MemberEntity> findByMemailAndMpassword(String memail,String mpwd);
 
+
 }

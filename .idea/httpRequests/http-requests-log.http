@@ -1,0 +1,219 @@
+GET http://localhost:80/board
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8.1)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-10-18T135617.200.json
+
+###
+
+DELETE http://localhost:80/board?bno=1
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8.1)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-10-18T135616.200.json
+
+###
+
+GET http://localhost:80/board
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8.1)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-10-18T135603.200.json
+
+###
+
+PUT http://localhost:80/board
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 243
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8.1)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+bno=1&btitle=%22%ED%85%8C%EC%8A%A4%ED%8A%B8%EC%A0%9C%EB%AA%A9%EC%88%98%EC%A0%95%22&bcontent=%22%ED%85%8C%EC%8A%A4%ED%8A%B8%EB%82%B4%EC%9A%A9%EC%88%98%EC%A0%95%22&bfile=%22%ED%85%8C%EC%8A%A4%ED%8A%B8%ED%8C%8C%EC%9D%BC%EC%88%98%EC%A0%95%22&mno=1
+
+<> 2023-10-18T135601.200.json
+
+###
+
+GET http://localhost:80/board
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8.1)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-10-18T135547.200.json
+
+###
+
+GET http://localhost:80/board
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8.1)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-10-18T134537.200.json
+
+###
+
+DELETE http://localhost:80/board?bno=1
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8.1)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-10-18T134536.200.json
+
+###
+
+GET http://localhost:80/board
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8.1)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-10-18T134532.200.json
+
+###
+
+PUT http://localhost:80/board
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 243
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8.1)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+bno=1&btitle=%22%ED%85%8C%EC%8A%A4%ED%8A%B8%EC%A0%9C%EB%AA%A9%EC%88%98%EC%A0%95%22&bcontent=%22%ED%85%8C%EC%8A%A4%ED%8A%B8%EB%82%B4%EC%9A%A9%EC%88%98%EC%A0%95%22&bfile=%22%ED%85%8C%EC%8A%A4%ED%8A%B8%ED%8C%8C%EC%9D%BC%EC%88%98%EC%A0%95%22&mno=1
+
+<> 2023-10-18T134530.200.json
+
+###
+
+POST http://localhost:80/board
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 183
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8.1)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+btitle=%22%ED%85%8C%EC%8A%A4%ED%8A%B8%EC%A0%9C%EB%AA%A9%22&bcontent=%22%ED%85%8C%EC%8A%A4%ED%8A%B8%EB%82%B4%EC%9A%A9%22&bfile=%22%ED%85%8C%EC%8A%A4%ED%8A%B8%ED%8C%8C%EC%9D%BC%22&mno=1
+
+<> 2023-10-18T134529.200.json
+
+###
+
+GET http://localhost:80/board
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8.1)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-10-18T134313-4.200.json
+
+###
+
+DELETE http://localhost:80/board?bno=1
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8.1)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-10-18T134313-3.200.json
+
+###
+
+PUT http://localhost:80/board
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 243
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8.1)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+bno=1&btitle=%22%ED%85%8C%EC%8A%A4%ED%8A%B8%EC%A0%9C%EB%AA%A9%EC%88%98%EC%A0%95%22&bcontent=%22%ED%85%8C%EC%8A%A4%ED%8A%B8%EB%82%B4%EC%9A%A9%EC%88%98%EC%A0%95%22&bfile=%22%ED%85%8C%EC%8A%A4%ED%8A%B8%ED%8C%8C%EC%9D%BC%EC%88%98%EC%A0%95%22&mno=1
+
+<> 2023-10-18T134313-2.200.json
+
+###
+
+GET http://localhost:80/board
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8.1)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-10-18T134313-1.200.json
+
+###
+
+POST http://localhost:80/board
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 183
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8.1)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+btitle=%22%ED%85%8C%EC%8A%A4%ED%8A%B8%EC%A0%9C%EB%AA%A9%22&bcontent=%22%ED%85%8C%EC%8A%A4%ED%8A%B8%EB%82%B4%EC%9A%A9%22&bfile=%22%ED%85%8C%EC%8A%A4%ED%8A%B8%ED%8C%8C%EC%9D%BC%22&mno=1
+
+<> 2023-10-18T134313.200.json
+
+###
+
+GET http://localhost:80/board
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8.1)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-10-18T134127.200.json
+
+###
+
+POST http://localhost:80/board
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 0
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8.1)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-10-18T134039.500.json
+
+###
+
+DELETE http://localhost:80/board?bno=1
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8.1)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-10-18T134039-2.200.json
+
+###
+
+PUT http://localhost:80/board
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 243
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8.1)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+bno=1&btitle=%22%ED%85%8C%EC%8A%A4%ED%8A%B8%EC%A0%9C%EB%AA%A9%EC%88%98%EC%A0%95%22&bcontent=%22%ED%85%8C%EC%8A%A4%ED%8A%B8%EB%82%B4%EC%9A%A9%EC%88%98%EC%A0%95%22&bfile=%22%ED%85%8C%EC%8A%A4%ED%8A%B8%ED%8C%8C%EC%9D%BC%EC%88%98%EC%A0%95%22&mno=1
+
+<> 2023-10-18T134039-1.200.json
+
+###
+
+GET http://localhost:80/board
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8.1)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-10-18T134039.200.json
+
+###
+
+POST http://localhost:80/board
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 183
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8.1)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+btitle=%22%ED%85%8C%EC%8A%A4%ED%8A%B8%EC%A0%9C%EB%AA%A9%22&bcontent=%22%ED%85%8C%EC%8A%A4%ED%8A%B8%EB%82%B4%EC%9A%A9%22&bfile=%22%ED%85%8C%EC%8A%A4%ED%8A%B8%ED%8C%8C%EC%9D%BC%22&mno=1
+
+<> 2023-10-18T134038.200.json
+
+###
+

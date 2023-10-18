@@ -1,0 +1,27 @@
+###
+POST http://localhost:80/board
+Content-Type: application/x-www-form-urlencoded
+
+btitle = "테스트제목" &
+bcontent= "테스트내용"&
+bfile= "테스트파일"&
+mno= 1
+
+###
+GET http://localhost:80/board
+
+###
+PUT http://localhost:80/board
+Content-Type: application/x-www-form-urlencoded
+
+bno = 1 &
+btitle = "테스트제목수정" &
+bcontent= "테스트내용수정"&
+bfile= "테스트파일수정"&
+mno= 1
+
+###
+DELETE http://localhost:80/board?bno=1
+
+###
+GET http://localhost:80/board

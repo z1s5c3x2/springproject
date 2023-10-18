@@ -9,7 +9,7 @@ nodejs js자체 컬파일 기능 가진 플랫폼
 
     nodejs 설치 확인
         cmd node-v npm -v
-    react 설치
+    react
          1 현재 프로잭트내 리액트를 설치할 폴더 생성 [ 실무에서 프로젝트 2개(react,spring)]
             강의 프로젝트 상태
                    gradle 프로젝트[spring,react설치]
@@ -19,3 +19,6 @@ nodejs js자체 컬파일 기능 가진 플랫폼
 
          npm 설치
                npm i create-react-app reactapp(프로젝트명)
+    react js라이브러리
+        spa : 싱글페이지 애플리케이션 html 1개
+        mpa : 멀티페이지 애플리케이션 html 여러개
