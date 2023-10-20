@@ -6,7 +6,8 @@ import org.hibernate.annotations.ColumnDefault;
 import org.hibernate.annotations.DynamicInsert;
 
 import javax.persistence.*;
-import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity // 해당 클래스를 db테이블과 매핑 [ 엔티티 클래스 <----> db 테이블 ( 엔티티 객체  1개 <----> db테이블 내 레코드)]
 @Table(name = "member") // DB테이블명 정의 [ 생략시 해당 클래스명이 db테이블명으로 자동 생성 ]
@@ -28,6 +29,11 @@ public class MemberEntity extends BaseTime{
     @Column // 해당 필드 선정
     @ColumnDefault("'user'") // ColumnDefault("초기값")
     private String mrole;       // 6. 회원 등급
+
+    //외래키
+    @Builder.Default
+    @OneToMany(mappedBy = "memberEntity")
+    private List<BoardEntity> boardEntityList = new ArrayList<>();
     public MemberDto toDto() {
         return MemberDto.builder()
                 .mno(this.mno)

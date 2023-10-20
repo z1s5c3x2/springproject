@@ -29,8 +29,11 @@ public class BoardEntity extends BaseTime{
     private int bview;
     @Column(columnDefinition = "longtext")
     private String bfile;
-    @Column()
-    private int mno;
+
+    @ToString.Exclude @JoinColumn(name = "mno_fk")
+    @ManyToOne
+    private MemberEntity memberEntity;
+
 
     public BoardDto allToDto()
     {
@@ -40,7 +43,7 @@ public class BoardEntity extends BaseTime{
                 .btitle(this.btitle)
                 .bcontent(this.bcontent)
                 .bfile(this.bfile)
-                .mno(this.mno)
+                .mno(this.memberEntity.getMno())
                 .cdate(this.getCdate())
                 .udate(this.getUdate())
                 .build();

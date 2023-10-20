@@ -63,6 +63,11 @@ public class AppStart {
 *  json 형태(Json View)로 전달할 수도 있고, 자바 프론트엔드 언어인 JSP 페이지의 형태로 전달할 수도 있다.
 *
 *
+*  @OneToMany(mappedBy = "상대가 자신의 클래스를 참조하고 있는 변수의 이름")
+*   주입된 필드에 여러 레코드가 대입?참조?
+*   자신이 속한 필드를 참조 하는 참조 클래스의 변수이름
 *
-*
+*  @ManyToOne , @JoinColumn(name = "pk_fk ? (pk,이름 규칙)")
+*   주입된 필드가 참조하려는 하나의 필드에 대입? 참조?
+*   참조하려는 테이블의 pk_fk?
 * */

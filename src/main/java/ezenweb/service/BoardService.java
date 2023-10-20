@@ -20,7 +20,7 @@ public class BoardService {
     @Transactional
     public boolean write(BoardDto boardDto)
     {
-        return boardEntityRepository.save(boardDto.saveToEntity()).getMno() >=1;
+        return boardEntityRepository.save(boardDto.saveToEntity()).getMemberEntity().getMno() >=1;
     }
 
     @Transactional

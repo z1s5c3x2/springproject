@@ -24,7 +24,6 @@ public class BoardDto {
                 .bfile(this.bfile)
                 .bview(this.bview)
                 .bcontent(this.bcontent)
-                .mno(this.mno)
                 .build();
     }
 }

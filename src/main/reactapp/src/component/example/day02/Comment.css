@@ -1,0 +1,25 @@
+.pimg{
+width:50px;height: 50px;
+}
+
+.CommentListBox
+{
+    width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.Wrap{
+    display: flex;
+    border: 1px solid red;
+    border-radius: 15px ;
+    margin: 10px; padding: 10px;
+}
+.commentName{
+    color: green; font-size: 17px; margin-bottom: 5px;
+}
+.commentContent
+{
+    font-size: 13px;
+}

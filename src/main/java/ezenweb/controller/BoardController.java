@@ -14,25 +14,22 @@ public class BoardController {
     private BoardService boardService;
 
     @PostMapping("")
-    public boolean write(BoardDto boardDto)
-    {
+    public boolean write(BoardDto boardDto) {
         return boardService.write(boardDto);
     }
 
     @GetMapping
-    public List<BoardDto> getAll()
-    {
+    public List<BoardDto> getAll() {
         return boardService.getAll();
     }
 
     @PutMapping
-    public boolean update(BoardDto boardDto)
-    {
+    public boolean update(BoardDto boardDto) {
         return boardService.update(boardDto);
     }
+
     @DeleteMapping
-    public boolean delete(@RequestParam int bno)
-    {
+    public boolean delete(@RequestParam int bno) {
         return boardService.delete(bno);
     }
 }
