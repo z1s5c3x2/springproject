@@ -40,3 +40,8 @@ bin/
 
 ### Mac OS ###
 .DS_Store
+/src/main/resources/static/
+
+
+
+### .gradle build/ .idea , 리액트 폴더에서 build /node_modules 통 & resources -> static

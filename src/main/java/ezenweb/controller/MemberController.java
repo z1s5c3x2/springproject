@@ -11,6 +11,7 @@ import java.util.ArrayList;
 
 @RestController
 @RequestMapping("/member")
+// @CrossOrigin("http://192.168.17.147:3000")
 public class MemberController {
     // Controller -> service
     // Controller <- service

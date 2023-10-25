@@ -1,3 +1,185 @@
+POST http://localhost:80/member/login
+Content-Type: application/json
+Content-Length: 62
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8.1)
+Cookie: JSESSIONID=A5F6F5ED34082F1429ABC54712B6F847
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "memail" : "test@qweqwe.com" ,
+  "mpassword":"changePwd"
+}
+
+<> 2023-10-24T144045.200.json
+
+###
+
+POST http://localhost:80/member/login
+Content-Type: application/json
+Content-Length: 62
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8.1)
+Cookie: JSESSIONID=A5F6F5ED34082F1429ABC54712B6F847
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "memail" : "test@qweqwe.com" ,
+  "mpassword":"changePwd"
+}
+
+<> 2023-10-24T144044.200.json
+
+###
+
+PUT http://localhost:80/member/put
+Content-Type: application/json
+Content-Length: 105
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8.1)
+Cookie: JSESSIONID=A5F6F5ED34082F1429ABC54712B6F847
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "mno" : 1,
+  "memail" : "test@qweqwe.com" ,
+  "mphone" : "111-1234-1234",
+  "mpassword":"changePwd"
+}
+
+<> 2023-10-24T144042.200.json
+
+###
+
+POST http://localhost:80/member/login
+Content-Type: application/json
+Content-Length: 59
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8.1)
+Cookie: JSESSIONID=A5F6F5ED34082F1429ABC54712B6F847
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "memail" : "test@qweqwe.com" ,
+  "mpassword":"www123"
+}
+
+<> 2023-10-24T144037.200.json
+
+###
+
+POST http://localhost:80/member/login
+Content-Type: application/json
+Content-Length: 59
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8.1)
+Cookie: JSESSIONID=A5F6F5ED34082F1429ABC54712B6F847
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "memail" : "test@qweqwe.com" ,
+  "mpassword":"www123"
+}
+
+<> 2023-10-24T144035.200.json
+
+###
+
+POST http://localhost:80/member/login
+Content-Type: application/json
+Content-Length: 62
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8.1)
+Cookie: JSESSIONID=A5F6F5ED34082F1429ABC54712B6F847
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "memail" : "test@qweqwe.com" ,
+  "mpassword":"changePwd"
+}
+
+<> 2023-10-24T144022.200.json
+
+###
+
+POST http://localhost:80/member/login
+Content-Type: application/json
+Content-Length: 62
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8.1)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "memail" : "test@qweqwe.com" ,
+  "mpassword":"changePwd"
+}
+
+<> 2023-10-24T144020.200.json
+
+###
+
+POST http://localhost:80/member/post
+Content-Type: application/json
+Content-Length: 108
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8.1)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "memail" : "qweqwe@qweqwe.com" ,
+  "mphone" : "010-1234-1234",
+  "mname":"asd",
+  "mpassword":"www123"
+}
+
+<> 2023-10-24T144015.200.json
+
+###
+
+POST http://localhost:80/member/post
+Content-Type: application/json
+Content-Length: 108
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8.1)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "memail" : "qweqwe@qweqwe.com" ,
+  "mphone" : "010-1234-1234",
+  "mname":"asd",
+  "mpassword":"www123"
+}
+
+<> 2023-10-24T140918.200.json
+
+###
+
+POST http://localhost:80/member/post
+Content-Type: application/json
+Content-Length: 108
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8.1)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "memail" : "qweqwe@qweqwe.com" ,
+  "mphone" : "010-1234-1234",
+  "mname":"asd",
+  "mpassword":"www123"
+}
+
+<> 2023-10-24T135611.200.json
+
+###
+
+GET http://localhost:80/member/get?mno=1
+Content-Type: application/json
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8.1)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+###
+
 GET http://localhost:80/board
 Connection: Keep-Alive
 User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8.1)

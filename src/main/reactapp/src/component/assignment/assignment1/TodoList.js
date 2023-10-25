@@ -1,7 +1,7 @@
 import style from './todo.css'
-import ToDo from "./todo";
+import Todo from "./Todo";
 
-function ToDoList(props) {
+function TodoList(props) {
     let response = [{tcontent: "자바 배우기"},
         {tcontent: "리액트 배우기"},
         {tcontent: "파이썬 배우기"},
@@ -11,13 +11,13 @@ function ToDoList(props) {
             <h1> 나만의 할일 목록 </h1>
             <div className="todo_top">
                 <input className="tcontent" type="text"/>
-                <button onClick="postTest()" type="button"> 등록</button>
+                <button type="button"> 등록</button>
             </div>
 
             <div className="todo_bottom">
                 {
                     response.map(r => {
-                        return (<ToDo tcontent={r.tcontent}/>)
+                        return (<Todo tcontent={r.tcontent}/>)
                     })
                 }
             </div>
@@ -25,5 +25,5 @@ function ToDoList(props) {
     </>);
 }
 
-export default ToDoList;
+export default TodoList;
 

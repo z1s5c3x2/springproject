@@ -1,4 +1,4 @@
-function ToDo(props) {
+function Todo(props) {
     return (<>
         <div className="todo">
             <div className="tcontent"> {props.tcontent} </div>
@@ -10,4 +10,4 @@ function ToDo(props) {
     </>);
 }
 
-export default ToDo;
+export default Todo;
