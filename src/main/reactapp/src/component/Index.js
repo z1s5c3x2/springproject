@@ -20,6 +20,7 @@ import Component5 from "./assignment/assignment2/5_component";
 import Login from "./member/Login";
 import Signup from "./member/Signup";
 import AxiosComponent from "./example/day04/AxiosComponent";
+import Info from "./member/Info";
 
 
 export default function Index(props ){
@@ -44,8 +45,9 @@ export default function Index(props ){
                     <Route path='/assignment/assignment1/TodoList' element={<TodoList />}></Route>
                     <Route path='/assignment/assignment2/5_component' element={<Component5/>}></Route>
                     <Route path='/example/day04/AxiosComponent' element={<AxiosComponent />}></Route>
-                    <Route path='/member/login' element={<Login />} > </Route>
-                    <Route path='/member/signup' element={<Signup /> } > </Route>
+                    <Route path='/login' element={<Login />} > </Route>
+                    <Route path='/signup' element={<Signup /> } > </Route>
+                    <Route path='/Info' element={<Info /> } > </Route>
 
 
 

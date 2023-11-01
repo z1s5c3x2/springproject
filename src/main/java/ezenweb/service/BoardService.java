@@ -2,7 +2,9 @@ package ezenweb.service;
 
 import ezenweb.model.dto.BoardDto;
 import ezenweb.model.entity.BoardEntity;
+import ezenweb.model.entity.MemberEntity;
 import ezenweb.model.repository.BoardEntityRepository;
+import ezenweb.model.repository.MemberEntityRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -16,11 +18,26 @@ public class BoardService {
 
     @Autowired
     private BoardEntityRepository boardEntityRepository;
+    @Autowired
+    private MemberService memberService;
+    @Autowired
+    private MemberEntityRepository memberEntityRepository;
 
     @Transactional
     public boolean write(BoardDto boardDto)
     {
-        return boardEntityRepository.save(boardDto.saveToEntity()).getMemberEntity().getMno() >=1;
+        Optional<MemberEntity> optionalMemberEntity =  memberEntityRepository.findById(memberService.getMember().getMno());
+        if(!optionalMemberEntity.isPresent())
+        {
+            return false;
+        }
+        BoardEntity boardEntity = boardEntityRepository.save(boardDto.saveToEntity());
+
+        boardEntity.setMemberEntity(optionalMemberEntity.get());
+
+        optionalMemberEntity.get().getBoardEntityList().add(boardEntity);
+
+        return boardEntity.getBno() >=1;
     }
 
     @Transactional

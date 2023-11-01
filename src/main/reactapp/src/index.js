@@ -14,6 +14,8 @@ import CommentList from "./component/example/day02/CommentList";
 import ToDoList from "./component/assignment/assignment1/todoList";
 import RouteComponent from "./component/example/day04/RouteComponent";*/
 import Index from "./component/Index";
+import StateMgrComponent from "./component/example/day05/StateMgrComponent";
+import LifeCycleComponent from "./component/example/day05/LifeCycleComponent";
 
 //3 내가 만든 컴포넌트 (jsx파일내 함수) 호출
 
@@ -25,8 +27,8 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 //root.render(<React.StrictMode> <Component2 /> </React.StrictMode>);
 //root.render(<React.StrictMode> <Component3 /> </React.StrictMode>);
 //root.render(<React.StrictMode> <Component4 /> </React.StrictMode>);
+//root.render(<LifeCycleComponent /> );
 root.render(<React.StrictMode> <Index /> </React.StrictMode>);
-
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))

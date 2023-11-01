@@ -5,10 +5,6 @@ import ezenweb.service.MemberService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import java.util.ArrayList;
-
 @RestController
 @RequestMapping("/member")
 // @CrossOrigin("http://192.168.17.147:3000")
@@ -26,14 +22,7 @@ public class MemberController {
         boolean result = memberService.doPost(mdt);
         return result;
     }
-    //2 r
-    @GetMapping("/get")
-    public MemberDto doGet(@RequestParam int mno)
-    {
-        System.out.println("mno = " + mno);
-        MemberDto result = memberService.doGet(mno);
-        return result;
-    }
+
     //3 u
     @PutMapping("/put")
     public boolean doPut(@RequestBody MemberDto mdt)
@@ -63,17 +52,28 @@ public class MemberController {
     {
         return memberService.doFindMemberPwd(_dto);
     }
-    @PostMapping("/login")
-    public boolean doLogin(@RequestBody MemberDto _dto, HttpServletRequest req)
+    /*@PostMapping("/login")
+    public boolean doLogin(@RequestBody MemberDto _dto )
     {
 
-        return memberService.doLogin(_dto,req);
+        return memberService.doLogin(_dto);
 
     }
     @GetMapping("logout")
-    public boolean doLogOut(HttpServletRequest req)
+    public boolean doLogOut()
     {
-        return memberService.doLogOut(req);
+        return memberService.doLogOut();
+    }*/
+
+
+    @GetMapping("/get")
+    public MemberDto getMember( ){
+        return  memberService.getMember();
+    }
+    @GetMapping("/findByMemail")
+    public boolean findByMemail(@RequestParam String memail)
+    {
+        return memberService.findByMemail(memail);
     }
 
 }
