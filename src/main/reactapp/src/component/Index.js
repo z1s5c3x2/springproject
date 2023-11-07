@@ -21,6 +21,10 @@ import Login from "./member/Login";
 import Signup from "./member/Signup";
 import AxiosComponent from "./example/day04/AxiosComponent";
 import Info from "./member/Info";
+import BoardList from "./board/BoardList";
+import BoardWrite from "./board/BoardWrite";
+import BoardView from "./board/BoardView";
+import BoardUpdate from "./board/BoardUpdate";
 
 
 export default function Index(props ){
@@ -48,9 +52,10 @@ export default function Index(props ){
                     <Route path='/login' element={<Login />} > </Route>
                     <Route path='/signup' element={<Signup /> } > </Route>
                     <Route path='/Info' element={<Info /> } > </Route>
-
-
-
+                    <Route path={"/board/list"} element={<BoardList />}> </Route>
+                    <Route path={"/board/write"} element={<BoardWrite />}> </Route>
+                    <Route path={"/board/view"} element={<BoardView />}> </Route>
+                    <Route path={"/board/update"} element={<BoardUpdate />}> </Route>
 
                 </Routes>
 

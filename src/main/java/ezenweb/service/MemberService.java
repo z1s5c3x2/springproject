@@ -1,9 +1,12 @@
 package ezenweb.service;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import ezenweb.model.dto.MemberDto;
 import ezenweb.model.entity.MemberEntity;
 import ezenweb.model.repository.MemberEntityRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -22,7 +25,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.transaction.Transactional;
-import java.util.Optional;
+import java.lang.reflect.Member;
+import java.util.*;
 
 @Service
 public class MemberService implements UserDetailsService//  일반회원
@@ -32,12 +36,63 @@ public class MemberService implements UserDetailsService//  일반회원
     //Autowried 사용 불가, 스프링 컨테이너에 등록 안된 빈
     private PasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
 
+
     /*==========================oauth2회원======================*/
     @Override
     public OAuth2User loadUser(OAuth2UserRequest userRequest) throws OAuth2AuthenticationException {
         // 로그인을성공한 oauth2 계정의 정보 호출
         OAuth2User oAuth2User = new DefaultOAuth2UserService().loadUser(userRequest);
         System.out.println("oAuth2User = " + oAuth2User);
+
+        // 인증 결과 ( 카카오 , 네이버 , 구글 등)
+        // 인증한 소셜 서비스 아이디 (각 회사명) 찾기
+        String regestratopmId = userRequest.getClientRegistration().getRegistrationId();
+        System.out.println("regestratopmId = " + regestratopmId);
+        String memail = null;
+        String mname = null;
+        String mrole = null;
+        if(regestratopmId.equals("kakao")) {
+
+
+            Map<String,Object> stringObjectMap = ((Map<String,Object>)((Map<String,Object>)(oAuth2User.getAttributes().get("kakao_account"))).get("profile"));
+            memail = stringObjectMap.get("email").toString();
+            mname = stringObjectMap.get("mane").toString();
+            Object[] objects = oAuth2User.getAuthorities().toArray();
+            System.out.println("memail = " + memail);
+            System.out.println("mname = " + mname);
+            System.out.println("objects = " + objects);
+
+        }else if(regestratopmId.equals("naver")){
+            Map<String,Object> stringObjectMap = (Map<String,Object>)oAuth2User.getAttributes().get("response");
+            memail = stringObjectMap.get("email").toString();
+            mname = stringObjectMap.get("nickname").toString();
+        }else if(regestratopmId.equals("google"))
+        {
+            memail = oAuth2User.getAttributes().get("email").toString();
+            mname = oAuth2User.getAttributes().get("name").toString();
+        }
+        List<GrantedAuthority> grantedAuthorities = new ArrayList<>();
+        grantedAuthorities.add(new SimpleGrantedAuthority("ROLE_" + regestratopmId));
+
+        if(!memail.isEmpty() && !mname.isEmpty() ) {
+            MemberDto mdt = MemberDto.builder()
+                    .memail(memail)
+                    .mname(mname)
+                    .socalAccount(oAuth2User.getAttributes()).build();
+            if(!mr.existsByMemail(memail))
+            {
+                mdt.setMrole("ROLE_USER");
+                mdt.setMpassword(new BCryptPasswordEncoder().encode(mname));
+                mdt.setMphone("010-1234-4321");
+                mr.save(mdt.toEntity());
+            }else{
+                mdt.setMrole(mr.findByMemail(memail).getMrole());
+            }
+            System.out.println("mdt.toString() = " + mdt);
+            mdt.getGrantedAuthorities().add(new SimpleGrantedAuthority(mdt.getMrole()));
+            return mdt;
+        }
+
         return null;
     }
 
@@ -58,11 +113,21 @@ public class MemberService implements UserDetailsService//  일반회원
         if( memberEntity == null ){ throw new UsernameNotFoundException("없는 아이디입니다"); }
         // 2. 로딩[불러오기]된 사용자의 정보를 이용해서 패스워드를 검증
         // 2-1 있는 아이디 이면
-        UserDetails userDetails = User.builder()
+        /*UserDetails userDetails = User.builder()
                 .username( memberEntity.getMemail() )           // 찾은 사용자 정보의 아이디
                 .password( memberEntity.getMpassword() )        // 찾은 사용자 정보의 패스워드
-                .authorities(memberEntity.getMrole()).build();              // 찾은 사용자 정보의 권한
-        return userDetails;
+                .authorities(memberEntity.getMrole()).build();              // 찾은 사용자 정보의 권한*/
+
+
+        List<GrantedAuthority> grantedAuthorities  = new ArrayList<>();
+        grantedAuthorities.add(new SimpleGrantedAuthority(memberEntity.getMrole()));
+        MemberDto memberDto = MemberDto.builder()
+                .memail(memberEntity.getMemail())
+                .mpassword(memberEntity.getMpassword())
+                .mname(memberEntity.getMname())
+                .grantedAuthorities(grantedAuthorities).build();
+
+        return memberDto;
     }
 
 

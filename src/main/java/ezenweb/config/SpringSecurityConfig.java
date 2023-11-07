@@ -18,7 +18,10 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         // 0. 인증된 권한
-        http.authorizeHttpRequests().antMatchers("/info").hasAnyRole("USER").antMatchers("/**").permitAll();
+        http.authorizeHttpRequests()
+                .antMatchers("/info").hasAnyRole("USER")
+                .antMatchers("/board/write").hasAnyRole("USER")
+                .antMatchers("/**").permitAll();
         //super.configure(http);
         http.formLogin()                      // 1. 시큐리티 로그인 사용 [ form 전송 ]
                 .loginPage("/login")          // 2. 시큐리티 로그인으로 사용할 VIEW페이지의 HTTP 주소 정의

@@ -3,6 +3,7 @@ package ezenweb.model.dto;
 
 import ezenweb.model.entity.BoardEntity;
 import lombok.*;
+import org.springframework.data.domain.Pageable;
 
 import java.time.LocalDateTime;
 
