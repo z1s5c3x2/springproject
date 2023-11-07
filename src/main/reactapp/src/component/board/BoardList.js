@@ -40,7 +40,7 @@ export default function BoardList(props){
     let [ pageDto, setPageDto ] = useState({
         boardDtos : [],
         totalPages : 0,
-        totalCount : 0
+        totalElement : 0
     }); // 스프링에서 전달해주는 DTO와 일치화
 
     // 1. 리액트 페이지번호
@@ -49,7 +49,7 @@ export default function BoardList(props){
         key : '' ,
         keyword : ''
     });
-
+    console.log( pageInfo )
     // 1. axios를 이용한 스프링의 컨트롤과 통신
     useEffect( ()=> {   // ※ 의존성배열 : 컴포넌트가 생성될 때/특정 상태변수(page)가 변경될 때 실행되는 함수
 
@@ -67,7 +67,7 @@ export default function BoardList(props){
     // 2. 페이지 번호를 클릭했을 때
     const onPageSelect = (e, value) =>{
         pageInfo.page = value;  // 클릭한 페이지번호로 변경
-        setPageInfo(value)          // 새로고침 [상태변수의 주소값이 바뀌면 재랜더링]
+        setPageInfo( {...pageInfo})          // 새로고침 [상태변수의 주소값이 바뀌면 재랜더링]
     }
 
     // 3. 검색 버튼을 눌렀을 때
