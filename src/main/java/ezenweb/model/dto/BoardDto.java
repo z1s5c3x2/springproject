@@ -15,8 +15,10 @@ public class BoardDto {
     private int bview;
     private String bfile;
     private int mno;
-    private LocalDateTime cdate;
-    private LocalDateTime udate;
+    private String cdate;
+    private String udate;
+
+    private String memail;
 
     public BoardEntity saveToEntity()
     {

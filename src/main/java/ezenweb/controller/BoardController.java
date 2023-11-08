@@ -18,11 +18,13 @@ public class BoardController {
     public boolean write(BoardDto boardDto) {
         System.out.println("boardDto = " + boardDto);
         return boardService.write(boardDto);
+
     }
 
     @GetMapping
-    public PageDto getAll(@RequestParam int page) {
-        return boardService.getAll(page);
+    public PageDto getAll(@RequestParam int page ,@RequestParam String key,@RequestParam String keyword,@RequestParam int view) {
+        System.out.println("page = " + page + ", key = " + key + ", keyword = " + keyword + ", pageSize = " + view);
+        return boardService.getAll(page,key,keyword,view);
     }
 
     @PutMapping

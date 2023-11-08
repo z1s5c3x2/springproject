@@ -44,8 +44,9 @@ public class BoardEntity extends BaseTime{
                 .bcontent(this.bcontent)
                 .bfile(this.bfile)
                 .mno(this.memberEntity.getMno())
-                .cdate(this.getCdate())
-                .udate(this.getUdate())
+                .cdate(toTimeOrDate(this.getCdate()))
+                .udate(toTimeOrDate(this.getUdate()))
+                .memail(this.memberEntity.getMemail().split("@")[0])
                 .build();
     }
 }
