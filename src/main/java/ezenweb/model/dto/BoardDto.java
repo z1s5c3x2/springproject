@@ -4,6 +4,7 @@ package ezenweb.model.dto;
 import ezenweb.model.entity.BoardEntity;
 import lombok.*;
 import org.springframework.data.domain.Pageable;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.time.LocalDateTime;
 
@@ -17,7 +18,7 @@ public class BoardDto {
     private int mno;
     private String cdate;
     private String udate;
-
+    private MultipartFile file;
     private String memail;
 
     public BoardEntity saveToEntity()

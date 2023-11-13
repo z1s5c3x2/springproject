@@ -40,6 +40,7 @@ export default function BoardView(props){
         <h3> 게시글 상세 보기 </h3>
         <div>  {board.btitle}</div>
         <div> {board.bcontent}</div>
+        <div> <a href={"/board/filedownload?uuidFile="+board.bfile} >{board.bfile} </a> </div>
         {
             board.mno == loginMno ?
                 (<>  <Button type={"button"} onClick={onDelete}> 삭제 </Button>

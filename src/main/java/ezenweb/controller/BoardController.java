@@ -3,6 +3,8 @@ package ezenweb.controller;
 import ezenweb.model.dto.BoardDto;
 import ezenweb.model.dto.PageDto;
 import ezenweb.service.BoardService;
+import ezenweb.service.FileService;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -13,10 +15,13 @@ import java.util.List;
 public class BoardController {
     @Autowired
     private BoardService boardService;
+    @Autowired
+    private FileService fileService;
 
     @PostMapping("")
     public boolean write(BoardDto boardDto) {
         System.out.println("boardDto = " + boardDto);
+
         return boardService.write(boardDto);
 
     }
@@ -42,5 +47,12 @@ public class BoardController {
     public BoardDto doGet(@RequestParam int bno)
     {
         return boardService.doGet(bno);
+    }
+
+    @GetMapping("/filedownload")
+    public void fileDownload(@RequestParam String uuidFile)
+    {
+        System.out.println(uuidFile);
+        fileService.fileDownload(uuidFile);
     }
 }
