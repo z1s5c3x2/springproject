@@ -2,6 +2,7 @@ import {Link} from "react-router-dom";
 import  styles from "./css/Header.css";
 import axios from "axios";
 import {useEffect, useState} from "react";
+import {Button} from "@mui/material";
 export default function Header( props ){
     // 1. 로그인 상태를 저장할 상태변수 선언
     let [ login , setLogin ] = useState( null );

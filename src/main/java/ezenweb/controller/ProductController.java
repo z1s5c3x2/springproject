@@ -10,6 +10,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Map;
+import java.util.Objects;
 
 @RestController
 @RequestMapping("/product")
@@ -65,4 +67,17 @@ public class ProductController {
         return productService.onProductDelete(pno);
     }
     /*제품 등록*/
+
+    @GetMapping("/barchart")
+    public List<Map<Object,Object>> getBarchart()
+    {
+
+        return productService.getBarchart();
+    }
+    @GetMapping("/piechart")
+    public List<Map<Object,Object>> getPiechart()
+    {
+
+        return productService.getPieChart();
+    }
 }

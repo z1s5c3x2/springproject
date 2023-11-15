@@ -17,7 +17,7 @@ import Index from "./component/Index";
 import StateMgrComponent from "./component/example/day05/StateMgrComponent";
 import LifeCycleComponent from "./component/example/day05/LifeCycleComponent";
 import RouterParam from "./component/example/day05/RouterParam";
-
+import {SnackbarProvider} from 'notistack';
 //3 내가 만든 컴포넌트 (jsx파일내 함수) 호출
 
 
@@ -29,7 +29,7 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 //root.render(<React.StrictMode> <Component3 /> </React.StrictMode>);
 //root.render(<React.StrictMode> <Component4 /> </React.StrictMode>);
 //root.render(<LifeCycleComponent /> );
-root.render(<React.StrictMode> <Index /> </React.StrictMode>);
+root.render(<SnackbarProvider maxSnack={5}> <Index /> </SnackbarProvider>);
 
 
 // If you want to start measuring performance in your app, pass a function

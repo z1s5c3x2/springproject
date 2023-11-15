@@ -1,9 +1,13 @@
 import Category from "./Category";
 import axios from "axios";
+import {useContext} from "react";
+import {SocketContext} from "../Index";
 
 export default function ProductWrite(props)
 {
 
+    console.log( useContext(SocketContext) )
+    const clientSocket = useContext(SocketContext).current;
     const onProductAdd = e => {
         let productForm = document.querySelectorAll(".productForm")[0]
         let productFormData = new FormData(productForm)
@@ -12,7 +16,7 @@ export default function ProductWrite(props)
             .then( (r) => {
                 if( r.data)
                 {
-                    alert("제품 등록 성공")
+                    clientSocket.send("새로운 제품이 등록 되었습니다. ")
                     productForm.reset();
                 }else{alert("제품 등록 실패")}
 
